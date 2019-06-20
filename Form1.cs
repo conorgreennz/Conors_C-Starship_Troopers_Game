@@ -77,6 +77,23 @@ namespace DiveBomb
             var rm = new System.Resources.ResourceManager(resourceName, asm);
             return (Bitmap)rm.GetObject(imageName);
         }
+        private Bitmap RotateImage(Bitmap bmp, float angle)
+        {
+            Bitmap rotatedImage = new Bitmap(bmp.Width, bmp.Height); //create a new bitmap as a rotated image
+            using (Graphics g = Graphics.FromImage(rotatedImage)) // create the new image using graphics
+            {
+                // Set the rotation point to the center in the matrix
+                g.TranslateTransform(bmp.Width / 2, bmp.Height / 2);
+                // Rotate
+                g.RotateTransform(angle);
+                // Restore rotation point in the matrix
+                g.TranslateTransform(-bmp.Width / 2, -bmp.Height / 2);
+                // Draw the image on the bitmap
+                g.DrawImage(bmp, new Point(0, 0));
+            }
+
+            return rotatedImage;
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -508,23 +525,7 @@ namespace DiveBomb
 
         }
         
-        private Bitmap RotateImage(Bitmap bmp, float angle)
-        {
-            Bitmap rotatedImage = new Bitmap(bmp.Width, bmp.Height); //create a new bitmap as a rotated image
-            using (Graphics g = Graphics.FromImage(rotatedImage)) // create the new image using graphics
-            {
-                // Set the rotation point to the center in the matrix
-                g.TranslateTransform(bmp.Width / 2, bmp.Height / 2);
-                // Rotate
-                g.RotateTransform(angle);
-                // Restore rotation point in the matrix
-                g.TranslateTransform(-bmp.Width / 2, -bmp.Height / 2);
-                // Draw the image on the bitmap
-                g.DrawImage(bmp, new Point(0, 0));
-            }
-
-            return rotatedImage;
-        }
+       
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {

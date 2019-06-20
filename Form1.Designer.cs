@@ -100,7 +100,7 @@
             this.panel1.Controls.Add(this.LblPts);
             this.panel1.Controls.Add(this.LblLives);
             this.panel1.Location = new System.Drawing.Point(843, 23);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 514);
             this.panel1.TabIndex = 12;
@@ -131,7 +131,7 @@
             // 
             this.BtnReset.Font = new System.Drawing.Font("Papyrus", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReset.Location = new System.Drawing.Point(22, 249);
-            this.BtnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnReset.Margin = new System.Windows.Forms.Padding(2);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(99, 49);
             this.BtnReset.TabIndex = 0;
